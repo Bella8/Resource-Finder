@@ -5,7 +5,7 @@ class ChiApiWrapper
   APP_TOKEN = ENV["APP_TOKEN"]
   SECRET_TOKEN = ENV["SECRET_TOKEN"]
 
-  def self.list_of_services(search)
+  def self.list_of_services
     url = BASE_URL + "division=" + "Counseling and Case Management Services"
     data = HTTParty.get(url, headers: {"APP_TOKEN" => "APP_TOKEN"})
     resources_list = []

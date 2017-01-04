@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
+# retun json. 
   def index
-    # @data = 
+    # @data =
   end
 
 end
