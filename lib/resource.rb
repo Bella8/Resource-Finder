@@ -1,20 +1,21 @@
 class Resource
 
-  attr_reader :agency, :division, :program_model, :site_name, :phone_number, :address, :city, :state, :zip
+  attr_accessor :agency, :division, :program_model, :site_name, :phone_number, :address, :city, :state, :zip
 
   def initialize(resource_info)
-    @agency = resource_info[:agency]
-    @division = resource_info[:division]
-    @program_model = resource_info[:program_model]
-    @site_name = resource_info[:site_name]
-    @phone_number = resource_info[:phone_number]
-    @address = resource_info[:address]
-    @city = respond_info[:city]
-    @state = respond_info[:state]
-    @zip = respond_info[:zip]
+    
+    self.agency = resource_info[:agency]
+    self.division = resource_info[:division]
+    self.program_model = resource_info[:program_model]
+    self.site_name = resource_info[:site_name]
+    self.phone_number = resource_info[:phone_number] ||= nil
+    self.address = resource_info[:address]
+    self.city = resource_info[:city]
+    self.state = resource_info[:state]
+    self.zip = resource_info[:zip]
   end
 
-  def self.search(search)
+  def self.list_of_services
     @resources_data = ChiApiWrapper.list_of_services
     return @resources_data
   end
