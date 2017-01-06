@@ -1,0 +1,39 @@
+<form>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= form_for :client do |f| %>
+      <ul>
+      <li>1. <%= f.label :Date_of_Assessment %></li>
+      <li><%= select_date Date.today, prefix: :start_date %></li>
+
+      <li>2. <%= f.label :Case_Number %>:</li>
+      <li><%= f.text_field :Case_Number %></li>
+
+      <li>4. <%= f.label :current_housing_type %>:</li>
+      <div class="field">
+    <%= f.label :autolyse %><br />
+    <%= f.label :autolyse, "Yes", :value => "true"  %>
+    <%= f.radio_button :autolyse, true %>
+    <%= f.label :autolyse, "No", :value => "false" %>
+    <%= f.radio_button :autolyse, false, :checked => true %>
+  </div>
+      <li><%= f.text_field :Case_Number %></li>
+
+      <li><%= f.submit %></li>
+    </ul>
+      <% end %>
+    </div>
+  </div>
+</form>
+
+<!-- <div class="row">
+<div class="small-6 columns">
+<label for="inputPassword">Password
+<input type="password" id="inputPassword" placeholder="Password">
+</label>
+<div class="row">
+<div class= "small-2 columns">
+<button class="button" type="submit">Login</button>
+</div>
+</div>
+</form> --

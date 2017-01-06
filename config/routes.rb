@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'hello_world', to: 'hello_world#index'
-  get '/resources', to: 'resources#index'
+
+  
+  resources :resources
+  get '/users_info/index', to: 'users_info#index'
+  get '/users_info/new', to: 'users_info#new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
