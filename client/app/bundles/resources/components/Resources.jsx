@@ -4,7 +4,8 @@ var Application = React.createClass({
 
     getInitialState: function () {
     return {
-      selectedOption: 'option1'
+      selectedOption: 'option1',
+      selectedOptionTwo: 'option1'
     };
   },
 
@@ -14,10 +15,17 @@ var Application = React.createClass({
   });
 },
 
+handleOptionChangeTwo: function (changeEvent) {
+this.setState({
+  selectedOptionTwo: changeEvent.target.value
+});
+},
+
+
   render() {
     return (
     <div>
-      <form >
+      <form  onSubmit={this.handleFormSubmit} >
           <p>
             Client current housing type?
           </p>
@@ -48,6 +56,25 @@ var Application = React.createClass({
             Renting
             </label>
           </div>
+
+
+              <p>
+                test question?
+              </p>
+              <div className="radio">
+                <label htmlFor="housing">
+                  <input  type="radio" value="option1" checked={this.state.selectedOptionTwo === 'option5'} onChange={this.handleOptionChangeTwo} />
+                  yes
+                </label>
+              </div>
+
+              <div className="radio">
+                <label htmlFor="housing">
+                  <input  type="radio" value="option2" checked={this.state.selectedOptionTwo === 'option6'} onChange={this.handleOptionChangeTwo} />
+                no
+                </label>
+              </div>
+          <button className="btn btn-default" type="submit">Save</button>
         </form>
       </div>
       );
